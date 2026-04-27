@@ -1,5 +1,5 @@
 import { Link, useNavigate, useRouterState } from "@tanstack/react-router";
-import { UtensilsCrossed, LogOut, LayoutDashboard, BookOpen } from "lucide-react";
+import { UtensilsCrossed, LogOut, LayoutDashboard, BookOpen, CalendarCheck2, Truck } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { supabase } from "@/integrations/supabase/client";
 import { useAuth } from "@/hooks/useAuth";
@@ -48,6 +48,22 @@ export function AppHeader() {
                   <Button variant={isActive ? "secondary" : "ghost"} size="sm" className="gap-2">
                     <BookOpen className="h-4 w-4" />
                     <span className="hidden sm:inline">Menu</span>
+                  </Button>
+                )}
+              </Link>
+              <Link to="/reserve">
+                {({ isActive }) => (
+                  <Button variant={isActive ? "secondary" : "ghost"} size="sm" className="gap-2">
+                    <CalendarCheck2 className="h-4 w-4" />
+                    <span className="hidden sm:inline">Reserve</span>
+                  </Button>
+                )}
+              </Link>
+              <Link to="/order">
+                {({ isActive }) => (
+                  <Button variant={isActive ? "secondary" : "ghost"} size="sm" className="gap-2">
+                    <Truck className="h-4 w-4" />
+                    <span className="hidden sm:inline">Order</span>
                   </Button>
                 )}
               </Link>

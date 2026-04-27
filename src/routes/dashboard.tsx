@@ -5,7 +5,7 @@ import { useAuth } from "@/hooks/useAuth";
 import { supabase } from "@/integrations/supabase/client";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, BookOpen, CalendarDays, Sparkles, Utensils } from "lucide-react";
+import { ArrowRight, BookOpen, CalendarCheck2, CalendarDays, Sparkles, Truck, Utensils } from "lucide-react";
 
 export const Route = createFileRoute("/dashboard")({
   head: () => ({
@@ -70,6 +70,38 @@ function DashboardPage() {
         <StatCard icon={<Utensils className="h-5 w-5" />} label="Available dishes" value={counts.items} />
         <StatCard icon={<BookOpen className="h-5 w-5" />} label="Menu categories" value={counts.categories} />
         <StatCard icon={<CalendarDays className="h-5 w-5" />} label="Open tonight" value="6 — late" />
+      </div>
+
+      {/* Quick actions */}
+      <div className="mt-8 grid gap-4 sm:grid-cols-2">
+        <Link to="/reserve" className="group">
+          <Card className="border-border/60 shadow-soft transition-all hover:shadow-elegant hover:-translate-y-0.5">
+            <CardContent className="flex items-center gap-4 p-6">
+              <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-warm text-primary-foreground">
+                <CalendarCheck2 className="h-5 w-5" />
+              </div>
+              <div className="flex-1">
+                <p className="font-display text-lg">Reserve a table</p>
+                <p className="text-sm text-muted-foreground">Book your seat for tonight or any evening.</p>
+              </div>
+              <ArrowRight className="h-4 w-4 text-muted-foreground transition-transform group-hover:translate-x-1" />
+            </CardContent>
+          </Card>
+        </Link>
+        <Link to="/order" className="group">
+          <Card className="border-border/60 shadow-soft transition-all hover:shadow-elegant hover:-translate-y-0.5">
+            <CardContent className="flex items-center gap-4 p-6">
+              <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-warm text-primary-foreground">
+                <Truck className="h-5 w-5" />
+              </div>
+              <div className="flex-1">
+                <p className="font-display text-lg">Order delivery</p>
+                <p className="text-sm text-muted-foreground">Maison Lumière, plated and delivered.</p>
+              </div>
+              <ArrowRight className="h-4 w-4 text-muted-foreground transition-transform group-hover:translate-x-1" />
+            </CardContent>
+          </Card>
+        </Link>
       </div>
 
       {/* Featured */}

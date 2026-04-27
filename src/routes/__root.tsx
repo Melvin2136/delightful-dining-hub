@@ -35,10 +35,14 @@ export const Route = createRootRoute({
       { name: "description", content: "An intimate fine-dining experience. Reserve a table, browse the seasonal menu, and savour the moment." },
       { name: "author", content: "Maison Lumière" },
       { property: "og:title", content: "Maison Lumière — Modern Fine Dining" },
-      { property: "og:description", content: "An intimate fine-dining experience. Reserve a table and browse our seasonal menu." },
+      { property: "og:description", content: "An intimate fine-dining experience. Reserve a table, browse the seasonal menu, and savour the moment." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
       { name: "twitter:site", content: "@Lovable" },
+      { name: "twitter:title", content: "Maison Lumière — Modern Fine Dining" },
+      { name: "twitter:description", content: "An intimate fine-dining experience. Reserve a table, browse the seasonal menu, and savour the moment." },
+      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/96412d2e-2d4b-4215-99f7-792249fa688c/id-preview-9a587d07--e9293db8-0650-4647-b153-85723d6e1028.lovable.app-1777294768883.png" },
+      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/96412d2e-2d4b-4215-99f7-792249fa688c/id-preview-9a587d07--e9293db8-0650-4647-b153-85723d6e1028.lovable.app-1777294768883.png" },
     ],
     links: [
       {

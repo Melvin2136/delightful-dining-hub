@@ -14,6 +14,90 @@ export type Database = {
   }
   public: {
     Tables: {
+      delivery_order_items: {
+        Row: {
+          created_at: string
+          id: string
+          item_name: string
+          menu_item_id: string
+          order_id: string
+          quantity: number
+          unit_price: number
+        }
+        Insert: {
+          created_at?: string
+          id?: string
+          item_name: string
+          menu_item_id: string
+          order_id: string
+          quantity: number
+          unit_price: number
+        }
+        Update: {
+          created_at?: string
+          id?: string
+          item_name?: string
+          menu_item_id?: string
+          order_id?: string
+          quantity?: number
+          unit_price?: number
+        }
+        Relationships: [
+          {
+            foreignKeyName: "delivery_order_items_menu_item_id_fkey"
+            columns: ["menu_item_id"]
+            isOneToOne: false
+            referencedRelation: "menu_items"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "delivery_order_items_order_id_fkey"
+            columns: ["order_id"]
+            isOneToOne: false
+            referencedRelation: "delivery_orders"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      delivery_orders: {
+        Row: {
+          created_at: string
+          customer_name: string
+          delivery_address: string
+          id: string
+          phone: string
+          special_instructions: string | null
+          status: string
+          total_amount: number
+          updated_at: string
+          user_id: string
+        }
+        Insert: {
+          created_at?: string
+          customer_name: string
+          delivery_address: string
+          id?: string
+          phone: string
+          special_instructions?: string | null
+          status?: string
+          total_amount?: number
+          updated_at?: string
+          user_id: string
+        }
+        Update: {
+          created_at?: string
+          customer_name?: string
+          delivery_address?: string
+          id?: string
+          phone?: string
+          special_instructions?: string | null
+          status?: string
+          total_amount?: number
+          updated_at?: string
+          user_id?: string
+        }
+        Relationships: []
+      }
       menu_items: {
         Row: {
           category: string
@@ -47,6 +131,51 @@ export type Database = {
           name?: string
           price?: number
           updated_at?: string
+        }
+        Relationships: []
+      }
+      reservations: {
+        Row: {
+          created_at: string
+          email: string
+          guest_name: string
+          id: string
+          party_size: number
+          phone: string
+          reservation_date: string
+          reservation_time: string
+          special_requests: string | null
+          status: string
+          updated_at: string
+          user_id: string
+        }
+        Insert: {
+          created_at?: string
+          email: string
+          guest_name: string
+          id?: string
+          party_size: number
+          phone: string
+          reservation_date: string
+          reservation_time: string
+          special_requests?: string | null
+          status?: string
+          updated_at?: string
+          user_id: string
+        }
+        Update: {
+          created_at?: string
+          email?: string
+          guest_name?: string
+          id?: string
+          party_size?: number
+          phone?: string
+          reservation_date?: string
+          reservation_time?: string
+          special_requests?: string | null
+          status?: string
+          updated_at?: string
+          user_id?: string
         }
         Relationships: []
       }
